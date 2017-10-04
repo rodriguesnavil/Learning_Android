@@ -6,111 +6,147 @@
     android:layout_height="match_parent"
     tools:context="com.data.learning.learning.UiComponent">
 
-    <LinearLayout
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="8sp"
-        android:layout_marginRight="8sp"
-        android:orientation="vertical"
-        >
-
-        <EditText
+        android:layout_height="wrap_content">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/newusername"
-            android:hint="Enter username"
-            android:inputType="text"
-            />
+            android:layout_height="match_parent"
+            android:layout_marginLeft="8sp"
+            android:layout_marginRight="8sp"
+            android:orientation="vertical"
+            android:id="@+id/uilinear"
+            >
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/newpassword"
-            android:hint="password"
-            android:inputType="textPassword"/>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/conpassword"
-            android:hint="confirm password"
-            android:inputType="textPassword"/>
-
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Gender"
-            android:typeface="monospace"
-            android:textStyle="bold"
-            android:textSize="@dimen/textsize"/>
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/gendergroup">
-
-            <RadioButton
-                android:layout_width="wrap_content"
+            <EditText
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="male"
-                android:id="@+id/male"/>
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="female"
-                android:id="@+id/female"
+                android:id="@+id/newusername"
+                android:hint="Enter username"
+                android:inputType="text"
                 />
-            <RadioButton
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/newpassword"
+                android:hint="password"
+                android:inputType="textPassword"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/conpassword"
+                android:hint="confirm password"
+                android:inputType="textPassword"/>
+
+
+
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="others"
-                android:id="@+id/others"/>
+                android:text="Gender"
+                android:typeface="monospace"
+                android:textStyle="bold"
+                android:textSize="@dimen/textsize"/>
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/gendergroup">
 
-        </RadioGroup>
-        <Spinner
-            android:layout_marginTop="10sp"
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="male"
+                    android:id="@+id/male"/>
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="female"
+                    android:id="@+id/female"
+                    />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="others"
+                    android:id="@+id/others"/>
+
+            </RadioGroup>
+            <Spinner
+                android:layout_marginTop="10sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/country"
+                ></Spinner>
+
+            <EditText
+                android:layout_marginTop="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="phone number"
+                android:inputType="phone"
+                android:id="@+id/phoneno"
+                />
+
+            <EditText
+                android:layout_marginTop="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="email id"
+                android:inputType="textEmailAddress"
+                android:id="@+id/email"
+                />
+
+           <Button
+               android:layout_width="wrap_content"
+               android:layout_height="match_parent"
+               android:layout_gravity="center"
+               android:text="Date of Birth"
+               android:id="@+id/dob"
+               android:onClick="datepicker"
+               />
+            <TextView
+                android:layout_marginTop="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rating bar"
+                />
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Start Time"
+                android:id="@+id/starttime"
+                android:onClick="timepicker"
+                />
+            <RatingBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/rateus"
+                android:numStars="5"
+                android:rating="3.5"
+                android:stepSize=".5"/>
+            <Switch
+                android:layout_marginTop="16sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Do you want any update of newsletter ?"/>
+
+
+        </LinearLayout>
+        <TableLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/country"
-            ></Spinner>
+            android:layout_below="@+id/uilinear">
+            <TableRow>
+                <Button
+                    android:text="submit"
+                    android:onClick="submit"/>
+                <Button
 
-        <EditText
-            android:layout_marginTop="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="phone number"
-            android:inputType="phone"
-            android:id="@+id/phoneno"
-            />
-
-        <EditText
-            android:layout_marginTop="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="email id"
-            android:inputType="textEmailAddress"
-            android:id="@+id/email"
-            />
-        <TextView
-            android:layout_marginTop="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rating bar"
-            />
-        <RatingBar
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:numStars="5"
-
-            />
-        <Switch
-            android:layout_marginTop="16sp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Do you want any update of newsletter ?"/>
-
-
-    </LinearLayout>
-
+                    android:text="clear"
+                    android:onClick="clear"/>
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
 </ScrollView>
