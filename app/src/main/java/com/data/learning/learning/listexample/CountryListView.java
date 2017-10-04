@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Spinner;
 
 import com.data.learning.learning.R;
 
@@ -28,6 +29,7 @@ public class CountryListView extends AppCompatActivity {
     private static EditText searchtext;
     private static ArrayAdapter adapter;
     private static RelativeLayout layout;
+    private static Spinner spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +43,7 @@ public class CountryListView extends AppCompatActivity {
         layout= (RelativeLayout) findViewById(R.id.rellistview);
         click();
     }
+
 
     public void click(){
 

@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
@@ -19,6 +20,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
 import android.widget.SeekBar;
+import android.widget.Spinner;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -35,22 +37,46 @@ public class UiComponent extends AppCompatActivity{
     private static AutoCompleteTextView country;
     private static SeekBar seekBar;
     private static ArrayList<String> selectedcountry;
+    private static Spinner spinner;
     Calendar dateTime=Calendar.getInstance();
     CoordinatorLayout layout;
+    String [] income ={"below 0"," 10k-40k","41k-71k","72k and above"};
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ui_component);
         radio= (RadioGroup) findViewById(R.id.gendergroup);
+
+        spinner= (Spinner) findViewById(R.id.income);
         setup();
         change();
         layout= (CoordinatorLayout) findViewById(R.id.coordinator);
         seekBar= (SeekBar) findViewById(R.id.seekbar);
         selectedcountry=new ArrayList<String>();
         seekbarsetup();
+        spinnersetup();
         setTitle("UI WIDGETS");
     }
 
+    public void spinnersetup(){
+        ArrayAdapter aa=new ArrayAdapter(this,android.R.layout.simple_spinner_item,income);
+        aa.setDropDownViewResource(android.R.layout.simple_spinner_item);
+        spinner.setAdapter(aa);
+
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                Snackbar.make(layout,"You have clicked "+income[position],Snackbar.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+    }
 //    setup the auto complete text view
     public void setup(){
         int layoutItem=android.R.layout.simple_dropdown_item_1line;
