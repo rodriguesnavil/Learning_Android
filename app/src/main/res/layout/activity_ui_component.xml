@@ -19,25 +19,45 @@
                 android:layout_height="match_parent"
                 android:layout_marginLeft="8sp"
                 android:layout_marginRight="8sp"
+                android:layout_marginTop="16sp"
                 android:orientation="vertical"
                 android:id="@+id/uilinear"
                 >
 
-                <EditText
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/newusername"
-                    android:hint="Enter username"
-                    android:inputType="text"
-                    />
+                    app:counterEnabled="true"
+                    app:counterMaxLength="140"
+                    app:passwordToggleEnabled="true"
+                    >
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newusername"
+                        android:hint="Enter username"
+                        android:inputType="text"
+                        />
 
-                <EditText
+                </android.support.design.widget.TextInputLayout>
+
+
+                <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/newpassword"
-                    android:hint="password"
-                    android:inputType="textPassword"/>
+                    app:passwordToggleEnabled="true"
+                    app:counterEnabled="true"
+                    app:counterMaxLength="26"
+                    app:hintAnimationEnabled="true">
 
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/newpassword"
+                        android:hint="password"
+                        android:inputType="textPassword"/>
+
+                </android.support.design.widget.TextInputLayout>
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -186,12 +206,14 @@
 
             <SeekBar
                 android:id="@+id/seekbar"
+                android:layout_marginTop="16sp"
+                android:layout_marginBottom="16sp"
                 style="@style/Widget.AppCompat.SeekBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/uitabletwo"
                 android:max="100"
-                android:progress="50"
+                android:progress="20"
                 android:thumb="@color/cardview_dark_background" />
         </RelativeLayout>
 

@@ -19,7 +19,8 @@
         <activity android:name=".activitylifecycle.Activity1" />
         <activity android:name=".activitylifecycle.Activity2" />
         <activity android:name=".layout.LayoutActivity" />
-        <activity android:name=".UiComponent"></activity>
+        <activity android:name=".UiComponent" />
+        <activity android:name=".listexample.CountryListView"></activity>
     </application>
 
 </manifest>

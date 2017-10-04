@@ -37,7 +37,13 @@
             android:text="@string/task3"
             android:onClick="goToActivity"
             />
-
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/conlistview"
+            android:layout_below="@+id/layout"
+            android:text="List View"
+            android:onClick="goToActivity"/>
 
     </RelativeLayout>
 
