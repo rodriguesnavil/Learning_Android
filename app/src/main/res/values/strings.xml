@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">Learning</string>
     <string name="activity_2">Activity 2</string>
+    <string name="task1">Activity LifeCycle Demo</string>
+    <string name="task3">Layouts</string>
+    <string name="task2">Widgets(Button, etc)</string>
 </resources>
