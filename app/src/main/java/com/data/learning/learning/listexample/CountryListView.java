@@ -10,6 +10,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ListAdapter;
 import android.widget.ListView;
@@ -61,21 +62,21 @@ public class CountryListView extends AppCompatActivity {
         searchtext.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                    ArrayList<String> temp=new ArrayList<String>();
-                    for(String data:country){
-                        if(data.contains(s)){
-                            temp.add(data);
-                        }
-                    }
 
-                    adapter=new ArrayAdapter<String>(CountryListView.this,R.layout.listviewrow,temp);
-                    adapter.notifyDataSetChanged();
-                    Snackbar.make(layout,"You have clicked "+temp,Snackbar.LENGTH_LONG).show();
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
+                String tempdata=searchtext.getText().toString();
+                ArrayList<String> temp=new ArrayList<String>();
+                for(String data:country){
+                    if(data.toLowerCase().contains(tempdata.toLowerCase())){
+                        temp.add(data);
+                    }
+                }
 
+                listView.setAdapter(new ArrayAdapter<String>(CountryListView.this,R.layout.listviewrow,temp));;
+                ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
             }
 
             @Override
