@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.data.learning.learning.activitylifecycle.Activity1;
+import com.data.learning.learning.layout.LayoutActivity;
 import com.data.learning.learning.model.DatabaseHelper;
 
 public class MainActivity extends AppCompatActivity {
@@ -71,6 +72,13 @@ public class MainActivity extends AppCompatActivity {
             case R.id.actlifecycle: intent=new Intent(getBaseContext(),Activity1.class);
                                     startActivity(intent);
                                     break;
+            case R.id.layout:   intent=new Intent(getBaseContext(),LayoutActivity.class);
+                                startActivity(intent);
+                                break;
+
+            case R.id.ui:   intent=new Intent(getBaseContext(),UiComponent.class);
+                            startActivity(intent);
+                            break;
         }
     }
 }

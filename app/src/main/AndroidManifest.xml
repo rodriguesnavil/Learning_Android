@@ -16,9 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".activitylifecycle.Activity1"></activity>
+        <activity android:name=".activitylifecycle.Activity1" />
         <activity android:name=".activitylifecycle.Activity2" />
-        <activity android:name=".layout.LayoutActivity"></activity>
+        <activity android:name=".layout.LayoutActivity" />
+        <activity android:name=".UiComponent"></activity>
     </application>
 
 </manifest>
