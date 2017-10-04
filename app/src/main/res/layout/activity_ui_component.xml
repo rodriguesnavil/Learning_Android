@@ -168,6 +168,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/uitableone"
                 android:shrinkColumns="1,2,3"
+                android:id="@+id/uitabletwo"
                 >
                 <TableRow>
                     <Button
@@ -182,6 +183,16 @@
                     <Button />
                 </TableRow>
             </TableLayout>
+
+            <SeekBar
+                android:id="@+id/seekbar"
+                style="@style/Widget.AppCompat.SeekBar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/uitabletwo"
+                android:max="100"
+                android:progress="50"
+                android:thumb="@color/cardview_dark_background" />
         </RelativeLayout>
 
     </ScrollView>

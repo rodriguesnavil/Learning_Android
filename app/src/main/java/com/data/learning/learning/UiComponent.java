@@ -9,6 +9,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
@@ -17,6 +18,7 @@ import android.widget.DatePicker;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RatingBar;
+import android.widget.SeekBar;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
@@ -31,6 +33,7 @@ public class UiComponent extends AppCompatActivity{
     private RadioButton gender;
     private static RadioGroup radio;
     private static AutoCompleteTextView country;
+    private static SeekBar seekBar;
     private static ArrayList<String> selectedcountry;
     Calendar dateTime=Calendar.getInstance();
     CoordinatorLayout layout;
@@ -42,7 +45,10 @@ public class UiComponent extends AppCompatActivity{
         setup();
         change();
         layout= (CoordinatorLayout) findViewById(R.id.coordinator);
+        seekBar= (SeekBar) findViewById(R.id.seekbar);
         selectedcountry=new ArrayList<String>();
+        seekbarsetup();
+        setTitle("UI WIDGETS");
     }
 
 //    setup the auto complete text view
@@ -215,5 +221,31 @@ public class UiComponent extends AppCompatActivity{
         alertDialog.show();
 
 
+    }
+
+    public void seekbarsetup(){
+
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            @Override
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+                Toast toast=Toast.makeText(UiComponent.this, ""+progress, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER,0,0);
+                toast.show();
+            }
+
+            @Override
+            public void onStartTrackingTouch(SeekBar seekBar) {
+                Toast toast=Toast.makeText(UiComponent.this, "starteed tracking", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER,0,0);
+                toast.show();
+            }
+
+            @Override
+            public void onStopTrackingTouch(SeekBar seekBar) {
+                Toast toast=Toast.makeText(UiComponent.this, "Stop Tracking", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER,0,0);
+                toast.show();
+            }
+        });
     }
 }
