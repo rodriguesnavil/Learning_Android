@@ -17,6 +17,7 @@ public class LayoutActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_activity);
+        setTitle("Layout Activity");
         username= (EditText) findViewById(R.id.layoutuser);
         pop= (Button) findViewById(R.id.createtost);
         clear=(Button)findViewById(R.id.clear);
