@@ -50,6 +50,8 @@ public class Activity1 extends AppCompatActivity {
 
     public void go(View view){
         Intent intent=new Intent(this,Activity2.class);
+        intent.putExtra("name","thompson");
+        intent.putExtra("age","21");
         startActivity(intent);
     }
 }
