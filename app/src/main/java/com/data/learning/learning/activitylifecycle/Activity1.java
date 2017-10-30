@@ -10,20 +10,21 @@ import com.data.learning.learning.R;
 
 public class Activity1 extends AppCompatActivity {
     final String Lable="lifecycle";
+    // Execute when only once when activity is created
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_1);
         Log.d(Lable,"activity1 On create");
     }
-
+   // Execute more than one time
     @Override
     protected void onStart() {
         super.onStart();
         Log.d(Lable,"activity1 on start");
 
     }
-
+// Excutes after on start
     @Override
     protected void onResume() {
         super.onResume();
@@ -41,13 +42,13 @@ public class Activity1 extends AppCompatActivity {
         super.onStop();
         Log.d(Lable,"activity1 on stop");
     }
-
+// Execute when activity is destroyed
     @Override
     protected void onDestroy() {
         super.onDestroy();
         Log.d(Lable,"activity1 on destory");
     }
-
+// Excute when button is pressed and jumps to another activity
     public void go(View view){
         Intent intent=new Intent(this,Activity2.class);
         intent.putExtra("name","thompson");
