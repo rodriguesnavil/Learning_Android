@@ -38,7 +38,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         database.execSQL(query);
         onCreate(database);
     }
-
+   
+    // Function select a particular name
     public Cursor selectdata(String name){
         SQLiteDatabase database=this.getReadableDatabase();
         String array[]=new String[1];
@@ -46,18 +47,19 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         return database.rawQuery("select * from "+TableName+" where ?=?",new String[]{"id",name});
 
     }
-
+   // Check login
     public Cursor login(String name){
         SQLiteDatabase database=this.getReadableDatabase();
         Cursor res=database.rawQuery("select * from "+TableName+" where id=?",new String[]{name});
         return res;
     }
 
+      // Get the content of the row
     public Cursor selectdata(){
         SQLiteDatabase database=this.getReadableDatabase();
         return database.rawQuery("select * from "+TableName,null);
     }
-
+   // Insert data into datbase 
     public void insertData(String name,String phone,String email){
         SQLiteDatabase database=this.getWritableDatabase();
         ContentValues contents=new ContentValues();
@@ -68,12 +70,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     }
-
+//Delete data into database
     public void delete(String id){
         SQLiteDatabase database=this.getWritableDatabase();
         database.delete(TableName,id,null);
     }
-
+//Upate data 
     public void updatedata(String id,String name,String phone,String email ){
         SQLiteDatabase database= this.getWritableDatabase();
         ContentValues values=new ContentValues();
