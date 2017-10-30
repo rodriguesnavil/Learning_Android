@@ -21,9 +21,10 @@ import com.data.learning.learning.R;
 
 import java.sql.Array;
 import java.util.ArrayList;
-
+// Created class to implement listview 
 public class CountryListView extends AppCompatActivity {
 
+    // Created private list of country 
     private static String [] country;
     private static ListView listView;
     private static EditText searchtext;
@@ -44,8 +45,9 @@ public class CountryListView extends AppCompatActivity {
         click();
     }
 
-
+//Listerner added for listview 
     public void click(){
+        //Executes when a row in list view is clicked
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -53,7 +55,7 @@ public class CountryListView extends AppCompatActivity {
                 Snackbar.make(layout,"You have clicked "+country[position],Snackbar.LENGTH_LONG).show();
             }
         });
-
+       //Executes when a row in list is long pressed 
         listView.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
@@ -61,7 +63,7 @@ public class CountryListView extends AppCompatActivity {
                 return false;
             }
         });
-
+       // Contains code to filter listview 
         searchtext.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
@@ -79,6 +81,7 @@ public class CountryListView extends AppCompatActivity {
                 }
 
                 listView.setAdapter(new ArrayAdapter<String>(CountryListView.this,R.layout.listviewrow,temp));;
+                // Notify the data is changed 
                 ((BaseAdapter)listView.getAdapter()).notifyDataSetChanged();
             }
 
